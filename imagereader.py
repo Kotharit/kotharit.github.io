@@ -4,7 +4,7 @@ import os, math
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 2) Build the path to the images folder:
-images_dir = os.path.join(script_dir, 'images2')
+images_dir = os.path.join(script_dir, 'images')
 
 # 3) List only .webp files in that folder:
 files = sorted(f for f in os.listdir(images_dir) if f.lower().endswith('.webp'))
@@ -23,5 +23,5 @@ for page in range(100):
     print(f'<!-- Page {page+1} ({len(page_files)} images) -->')
     for fn in page_files:
         # adjust path in href/src so it matches your repo layout
-        print(f'<a href="images2/{fn}"><img src="images2/{fn}" alt="{fn}"></a>')
+        print(f'<a href="images/{fn}"><img src="images/{fn}" alt="{fn}"></a>')
     print()
